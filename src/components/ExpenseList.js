@@ -2,20 +2,22 @@ import React, { Component } from "react";
 import "./ExpenseList.css";
 import ExpenseItem from "./ExpenseItem";
 
-export default class ExpenseList extends Component {
-  render() {
+
+const ExpenseList = (expenses, handleDelete) => {
     return (
       <>
         <ul className="list">
-          {this.props.initialExpenses.map((expense) => {
+          {expense.map(expenses => {
             return <ExpenseItem 
             key={expense.id}
-            expense={expense} /
-            handleDlete={this.handleDelete}>;
+            expense={expenses} 
+            handleDlete={handleDelete}
+            >;
           })}
         </ul>
         <button className="btn">목록 지우기</button>
-      </>
-    );
+
+          );
   }
-}
+
+export default ExpenseList;
