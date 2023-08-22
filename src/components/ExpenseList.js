@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ExpenseList.css";
 import ExpenseItem from "./ExpenseItem";
 
+// 클래스 -> 함수로 변경
 const ExpenseList = ({ expenses, handleDelete }) => {
   return (
     <>
