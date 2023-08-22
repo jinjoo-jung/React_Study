@@ -5,6 +5,11 @@ import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 
 export default class App extends Component {
+  initialExpense = [
+    { id: 1, charge: "렌트비", amount: 1600 },
+    { id: 2, charge: "교통비", amount: 400 },
+    { id: 3, charge: "식비", amount: 1200 },
+  ];
   render() {
     return (
       <main className="main-container">
@@ -19,7 +24,7 @@ export default class App extends Component {
         <div
           style={{ width: "100%", backgroundColor: "white", padding: "1rem" }}
         >
-          <ExpenseList />
+          <ExpenseList initialExpense={this.initialExpense} />
         </div>
 
         <div

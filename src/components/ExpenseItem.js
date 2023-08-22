@@ -5,11 +5,12 @@ import { MdDelete, MdEdit } from "react-icons/md";
 
 export default class ExpenseItem extends Component {
   render() {
+    this.props.initialExpenses = this.props.initialExpenses;
     return (
       <li className="item">
         <div className="info">
-          <span className="expense">식비</span>
-          <span className="amount">1000 원</span>
+          <span className="expense">{this.props.charge}</span>
+          <span className="amount">{this.props.amount} 원</span>
         </div>
         <div>
           <button className="edit-btn">
