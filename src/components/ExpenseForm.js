@@ -1,6 +1,7 @@
 import React from "react";
 import "./ExpenseForm.css";
 
+// 클래스 -> 함수로 변경
 const ExpenseForm = () => {
   return (
     <form>
