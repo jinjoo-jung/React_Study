@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./ExpenseItem.css";
 import { MdDelete, MdEdit } from "react-icons/md";
 
+// 클래스 -> 함수로 변경
 const ExpenseItem = ({ expense, handleDelete }) => {
   return (
     <li className="item">
