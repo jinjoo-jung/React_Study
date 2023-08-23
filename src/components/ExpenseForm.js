@@ -1,11 +1,10 @@
 import React from "react";
 import "./ExpenseForm.css";
 
-// 클래스 -> 함수로 변경
 const ExpenseForm = ({
   handleCharge,
-  charge,
   edit,
+  charge,
   amount,
   handleAmount,
   handleSubmit,
@@ -21,20 +20,21 @@ const ExpenseForm = ({
             id="charge"
             name="charge"
             placeholder="예) 렌트비"
-            onClick={handleCharge}
+            onChange={handleCharge}
             value={charge}
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="amount">비용</label>
           <input
             type="number"
             className="form-control"
             id="amount"
-            name="amount"
+            name="charge"
             placeholder="예) 100"
-            onClick={handleAmount}
             value={amount}
+            onChange={handleAmount}
           />
         </div>
       </div>

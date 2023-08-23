@@ -13,7 +13,7 @@ const ExpenseList = ({ expenses, handleDelete, handleEdit }) => {
               key={expense.id}
               expense={expense}
               handleDlete={handleDelete}
-              handleElit={handleEdit}
+              handleEdit={handleEdit}
             />
           );
         })}

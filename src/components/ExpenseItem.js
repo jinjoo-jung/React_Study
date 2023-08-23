@@ -1,10 +1,7 @@
-import React, { Component } from "react";
-// rcc 컴포넌트 생성
+import React from "react";
 import "./ExpenseItem.css";
 import { MdDelete, MdEdit } from "react-icons/md";
 
-// 클래스 -> 함수로 변경
-//const 생성
 const ExpenseItem = ({ expense, handleDelete, handleEdit }) => {
   return (
     <li className="item">
