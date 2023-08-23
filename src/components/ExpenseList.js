@@ -3,7 +3,7 @@ import "./ExpenseList.css";
 import ExpenseItem from "./ExpenseItem";
 
 // 클래스 -> 함수로 변경
-const ExpenseList = ({ expenses, handleDelete }) => {
+const ExpenseList = ({ expenses, handleDelete, handleEdit }) => {
   return (
     <>
       <ul className="list">
@@ -13,6 +13,7 @@ const ExpenseList = ({ expenses, handleDelete }) => {
               key={expense.id}
               expense={expense}
               handleDlete={handleDelete}
+              handleElit={handleEdit}
             />
           );
         })}

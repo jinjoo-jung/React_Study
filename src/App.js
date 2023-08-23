@@ -15,8 +15,19 @@ const App = () => {
 
   const [charge, setCharge] = useState("");
   const [amount, setAmount] = useState(0);
+  const [edit, setEdit] = useState(false);
+  const [id, setId] = useState("");
 
   const [alert, setAlert] = useState({ show: false, type: "", text: "" });
+
+  const handleEdit = (id) => {
+    const expense = expenses.find((item) => itme.id === id);
+    const { charge, amount } = expense;
+    setCharge(charge);
+    setAmount(amount);
+    setEdit(true);
+    setId(id);
+  };
 
   const handleAlert = (type, text) => {
     setAlert({ show: true, type, text });
@@ -33,7 +44,9 @@ const App = () => {
     event.preventDefault();
 
     if (charge !== "" && amount > 0) {
-      // expenses state에 새로운 객체 만들어서 추가하기 state update
+      if (edit) {
+      } else {
+      } // expenses state에 새로운 객체 만들어서 추가하기 state update
       // state update 할 때는 항상 불변성을 지켜줘야 합니다.
       // 불변성을 지킨다는 말은 이전에 있던 값을 건드리지 않고 새로운 값을 만들어서 교체를 해주면 된다.
 
@@ -88,6 +101,7 @@ const App = () => {
           amount={amount}
           handleAmount={handleAmount}
           handleSubmit={handleSubmit}
+          edit={edit}
         />
       </div>
 
@@ -100,7 +114,12 @@ const App = () => {
       >
         <p style={{ fontSize: "2rem" }}>
           총지출:
-          <span>원</span>
+          <span>
+            {expenses.reduce((acc, curr) => {
+              return (acc += curr.amount);
+            }, 0)}{" "}
+            원
+          </span>
         </p>
       </div>
     </main>
