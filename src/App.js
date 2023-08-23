@@ -20,6 +20,8 @@ const App = () => {
 
   const [alert, setAlert] = useState({ show: false, type: "", text: "" });
 
+  const clearItems = () => {};
+
   const handleEdit = (id) => {
     const expense = expenses.find((item) => itme.id === id);
     const { charge, amount } = expense;
